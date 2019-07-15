@@ -42,3 +42,11 @@ html body {
 p {
     font-family: 'VT323', monospace;
 }
+
+ul {
+    padding-inline-start: 0px;
+}
+
+li {
+    display: inline-block;
+}
