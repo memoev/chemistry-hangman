@@ -1,6 +1,8 @@
 var marioHangman = {
     mysteryArray: ['babymario', 'birdo', 'boo', 'bowser', 'goomba', 'koopatroopa', 'luigi', 'mario', 'peach', 'shyguy', 'starman', 'toad', 'waluigi', 'wario', 'yoshi'],
     correct: [],
+    incorrect: [],
+    userguess: [],
     numberOfWins: 0,
     remainGuess: 12,
     userTextWins: document.getElementById("numberOfWins"),
@@ -20,7 +22,9 @@ var marioHangman = {
             var li = document.createElement("li");
             //li.setAttribute('id', i);
             li.innerHTML = '_';
-            magicLetter.appendChild(li);  
+            this.userguess.push('_');
+            magicLetter.appendChild(li); 
+            console.log(this.userguess); 
         }
 
         marioHangman.userTextMystery.appendChild(magicLetter);
@@ -29,6 +33,7 @@ var marioHangman = {
     updateGuessedLetters: function (guess) {
         var node = document.createTextNode(guess + ' ');
 
+        this.incorrect.push(guess);
         this.userTextLetters.appendChild(node);
     },
 
