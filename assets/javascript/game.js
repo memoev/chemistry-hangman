@@ -12,7 +12,7 @@ var marioHangman = {
 
     generateWord: function (array) {
 
-        magicLetter = document.createElement('ul');
+        var magicLetter = document.createElement('ul');
         var guess = array[Math.floor(Math.random() * array.length)];
 
         console.log(guess);
@@ -28,6 +28,12 @@ var marioHangman = {
         
         console.log(this.userguess); 
         this.userTextMystery.appendChild(magicLetter);
+    },
+
+    updateWord: function (array) {
+
+        marioHangman.userTextMystery.innerHTML = marioHangman.userguess.join('');
+
     },
 
     updateGuessedLetters: function (guess) {
@@ -66,7 +72,7 @@ document.onkeyup = function (event) {
     console.log(match);
     
     if (match === true) {
-        //do some logic here!
+        marioHangman.updateWord(marioHangman.userguess);
     } else {
         marioHangman.updateGuessedLetters(guess);
         marioHangman.updateRemainGuess();
