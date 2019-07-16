@@ -20,14 +20,14 @@ var marioHangman = {
         for(i = 0; i < guess.length; i++) {
             this.correct.push(guess[i])
             var li = document.createElement("li");
-            //li.setAttribute('id', i);
+            li.setAttribute('id', i);
             li.innerHTML = '_';
             this.userguess.push('_');
             magicLetter.appendChild(li); 
-            console.log(this.userguess); 
         }
-
-        marioHangman.userTextMystery.appendChild(magicLetter);
+        
+        console.log(this.userguess); 
+        this.userTextMystery.appendChild(magicLetter);
     },
 
     updateGuessedLetters: function (guess) {
@@ -58,9 +58,11 @@ document.onkeyup = function (event) {
 
         if (guess === marioHangman.correct[i]) {
             match = true;
+            marioHangman.userguess[i] = guess;
         }
         
     }
+    console.log(marioHangman.userguess);
     console.log(match);
     
     if (match === true) {
