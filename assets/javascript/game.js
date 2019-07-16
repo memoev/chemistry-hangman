@@ -28,6 +28,7 @@ var marioHangman = {
         
         console.log(this.userguess); 
         this.userTextMystery.appendChild(magicLetter);
+        this.userTextRemain.textContent = this.remainGuess;
     },
 
     updateWord: function (array) {
@@ -79,4 +80,5 @@ document.onkeyup = function (event) {
     }
     
     //console.log(marioHangman.correct);
+
 }
