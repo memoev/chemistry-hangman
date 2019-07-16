@@ -9,6 +9,7 @@ var marioHangman = {
     userTextMystery: document.getElementById("mysteryWord"),
     userTextLetters: document.getElementById("guessedLetters"),
     userTextRemain: document.getElementById("remainGuess"),
+    userTextAnswer: document.getElementById("answer"),
 
     generateWord: function (array) {
 
