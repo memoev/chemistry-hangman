@@ -60,6 +60,7 @@ window.onload = function () {
 document.onkeyup = function (event) {
     var guess = event.key;
     var match = false;
+    var finish = false;
 
     for (i = 0; i < marioHangman.correct.length; i++) {
 
@@ -80,5 +81,18 @@ document.onkeyup = function (event) {
     }
     
     //console.log(marioHangman.correct);
+
+
+    if (!marioHangman.userguess.includes('_')) {
+        finish = true;
+    }
+
+    if (finish === true) {
+        marioHangman.numberOfWins++;
+        marioHangman.userTextWins.textContent = marioHangman.numberOfWins;
+    }
+
+
+    console.log(finish);
 
 }
