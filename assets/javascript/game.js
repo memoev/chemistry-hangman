@@ -1,11 +1,12 @@
 var marioHangman = {
     mysteryArray: ['babymario', 'birdo', 'boo', 'bowser', 'goomba', 'koopatroopa', 'luigi', 'mario', 'peach', 'shyguy', 'starman', 'toad', 'waluigi', 'wario', 'yoshi'],
-    guesses: [],
+    correct: [],
     numberOfWins: 0,
     remainGuess: 12,
     userTextWins: document.getElementById("numberOfWins"),
     userTextMystery: document.getElementById("mysteryWord"),
     userTextLetters: document.getElementById("guessedLetters"),
+    userTextRemain: document.getElementById("remainGuess"),
 
     generateWord: function (array) {
 
@@ -15,25 +16,30 @@ var marioHangman = {
         console.log(guess);
 
         for(i = 0; i < guess.length; i++) {
-            this.guesses.push(guess[i])
+            this.correct.push(guess[i])
             var li = document.createElement("li");
+            //li.setAttribute('id', i);
             li.innerHTML = '_';
             magicLetter.appendChild(li);  
         }
 
         marioHangman.userTextMystery.appendChild(magicLetter);
     },
+
     updateGuessedLetters: function (guess) {
         var node = document.createTextNode(guess + ' ');
 
         this.userTextLetters.appendChild(node);
     },
+
     updateRemainGuess: function () {
         this.remainGuess--;
-
+        this.userTextRemain.textContent = this.remainGuess;
         console.log(this.remainGuess);
     }
 }
+
+//GAME STARTS HERE
 
 window.onload = function () {
     marioHangman.generateWord(marioHangman.mysteryArray);
@@ -41,7 +47,23 @@ window.onload = function () {
 
 document.onkeyup = function (event) {
     var guess = event.key;
+    var match = false;
 
-    marioHangman.updateGuessedLetters(guess);
-    marioHangman.updateRemainGuess();
+    for (i = 0; i < marioHangman.correct.length; i++) {
+
+        if (guess === marioHangman.correct[i]) {
+            match = true;
+        }
+        
+    }
+    console.log(match);
+    
+    if (match === true) {
+        //do some logic here!
+    } else {
+        marioHangman.updateGuessedLetters(guess);
+        marioHangman.updateRemainGuess();
+    }
+    
+    //console.log(marioHangman.correct);
 }
