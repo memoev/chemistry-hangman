@@ -91,6 +91,7 @@ document.onkeyup = function (event) {
     if (finish === true) {
         marioHangman.numberOfWins++;
         marioHangman.userTextWins.textContent = marioHangman.numberOfWins;
+        marioHangman.userTextAnswer.setAttribute("src", "../Word-Guess-Game/assets/images/" + marioHangman.userguess.join('') + ".gif");
     }
 
 
