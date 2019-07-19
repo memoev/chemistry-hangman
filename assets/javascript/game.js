@@ -54,10 +54,10 @@ var marioHangman = {
 
 //GAME STARTS HERE
 
-window.onload = function () {
-    marioHangman.generateWord(marioHangman.mysteryArray);
-}
+function play () {
+marioHangman.generateWord(marioHangman.mysteryArray);
 
+    
 document.onkeyup = function (event) {
     var guess = event.key;
     var match = false;
@@ -85,18 +85,16 @@ document.onkeyup = function (event) {
 
 
     if (!marioHangman.userguess.includes('_')) {
+        finish = true;
         marioHangman.numberOfWins++;
         marioHangman.userTextWins.textContent = marioHangman.numberOfWins;
         marioHangman.userTextAnswer.setAttribute("src", "../Word-Guess-Game/assets/images/" + marioHangman.userguess.join('') + ".gif");
+        console.log(finish);
+        play();
     }
-
-    // if (finish === true) {
-    //     marioHangman.numberOfWins++;
-    //     marioHangman.userTextWins.textContent = marioHangman.numberOfWins;
-    //     marioHangman.userTextAnswer.setAttribute("src", "../Word-Guess-Game/assets/images/" + marioHangman.userguess.join('') + ".gif");
-    // }
-
     
-    console.log(finish);
+}
 
 }
+
+play();
