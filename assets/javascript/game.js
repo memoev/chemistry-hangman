@@ -85,16 +85,18 @@ document.onkeyup = function (event) {
 
 
     if (!marioHangman.userguess.includes('_')) {
-        finish = true;
-    }
-
-    if (finish === true) {
         marioHangman.numberOfWins++;
         marioHangman.userTextWins.textContent = marioHangman.numberOfWins;
         marioHangman.userTextAnswer.setAttribute("src", "../Word-Guess-Game/assets/images/" + marioHangman.userguess.join('') + ".gif");
     }
 
+    // if (finish === true) {
+    //     marioHangman.numberOfWins++;
+    //     marioHangman.userTextWins.textContent = marioHangman.numberOfWins;
+    //     marioHangman.userTextAnswer.setAttribute("src", "../Word-Guess-Game/assets/images/" + marioHangman.userguess.join('') + ".gif");
+    // }
 
+    
     console.log(finish);
 
 }
