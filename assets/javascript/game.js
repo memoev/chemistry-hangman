@@ -137,6 +137,7 @@ function playgame () {
             marioHangman.incorrect = [];
             console.log(marioHangman.userguess);
             marioHangman.remainGuess = 12;
+            marioHangman.userTextAnswer.setAttribute("src", "../Word-Guess-Game/assets/images/dead.gif");
             playgame();
         }
         
