@@ -5,6 +5,7 @@ html body {
 .container {
     text-align: center;
     margin: 50px;
+    margin-bottom: 10px;
 }
 
 #main-logo {
@@ -15,6 +16,15 @@ html body {
 
 #subtitle {
     line-height: 1px;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+}
+
+.musicControl {
+    font-size: 12px;
+    background-color: #FFD700;
+    border-color: #000000;
+    border-width: 2px;
     font-family: 'VT323', monospace;
 }
 
