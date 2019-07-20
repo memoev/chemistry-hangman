@@ -67,6 +67,8 @@ function playgame () {
     audioElementPause.setAttribute("src", "../word-guess-game/assets/tunes/pause.mp3");
     var audioElementWin = document.createElement("audio");
     audioElementWin.setAttribute("src", "../word-guess-game/assets/tunes/powerup.mp3");
+    var audioElementLoose = document.createElement("audio");
+    audioElementLoose.setAttribute("src", "../word-guess-game/assets/tunes/dead.mp3");
     //audioElement.play(); //Does not work with Chrome
     marioHangman.generateWord(marioHangman.mysteryArray);
 
@@ -138,6 +140,7 @@ function playgame () {
             console.log(marioHangman.userguess);
             marioHangman.remainGuess = 12;
             marioHangman.userTextAnswer.setAttribute("src", "../Word-Guess-Game/assets/images/dead.gif");
+            audioElementLoose.play();
             playgame();
         }
         
