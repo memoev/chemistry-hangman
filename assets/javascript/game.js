@@ -82,6 +82,7 @@ function playgame () {
     
     pauseMusic.onclick = function () {
         audioElementTheme.pause();
+        audioElementTheme.pause();
         audioElementPause.play();
     }
   
