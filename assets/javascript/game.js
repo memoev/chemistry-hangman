@@ -58,17 +58,17 @@ var marioHangman = {
 }
 
 //GAME STARTS HERE
+var audioElementTheme = document.createElement("audio");
+audioElementTheme.setAttribute("src", "../word-guess-game/assets/tunes/maintheme.mp3");
+var audioElementPause = document.createElement("audio");
+audioElementPause.setAttribute("src", "../word-guess-game/assets/tunes/pause.mp3");
+var audioElementWin = document.createElement("audio");
+audioElementWin.setAttribute("src", "../word-guess-game/assets/tunes/powerup.mp3");
+var audioElementLoose = document.createElement("audio");
+audioElementLoose.setAttribute("src", "../word-guess-game/assets/tunes/dead.mp3");
 
 function playgame () {
 
-    var audioElementTheme = document.createElement("audio");
-    audioElementTheme.setAttribute("src", "../word-guess-game/assets/tunes/maintheme.mp3");
-    var audioElementPause = document.createElement("audio");
-    audioElementPause.setAttribute("src", "../word-guess-game/assets/tunes/pause.mp3");
-    var audioElementWin = document.createElement("audio");
-    audioElementWin.setAttribute("src", "../word-guess-game/assets/tunes/powerup.mp3");
-    var audioElementLoose = document.createElement("audio");
-    audioElementLoose.setAttribute("src", "../word-guess-game/assets/tunes/dead.mp3");
     //audioElement.play(); //Does not work with Chrome
     marioHangman.generateWord(marioHangman.mysteryArray);
 
@@ -81,7 +81,6 @@ function playgame () {
     var pauseMusic = document.getElementById("buttonPause")
     
     pauseMusic.onclick = function () {
-        audioElementTheme.pause();
         audioElementTheme.pause();
         audioElementPause.play();
     }
