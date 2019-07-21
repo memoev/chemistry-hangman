@@ -1,16 +1,21 @@
+//MAIN OBJECT
 var marioHangman = {
+    //ARRAY TO HOLD GUESS WORDS
     mysteryArray: ['babymario', 'birdo', 'boo', 'bowser', 'goomba', 'koopatroopa', 'luigi', 'mario', 'peach', 'shyguy', 'starman', 'toad', 'waluigi', 'wario', 'yoshi', 'piranhaplant'],
+    //OBJECT VARIABLES USED DURING GAME
     correct: [],
     incorrect: [],
     userguess: [],
     numberOfWins: 0,
     remainGuess: 12,
+    //DOCUMENT ELEMENTS
     userTextWins: document.getElementById("numberOfWins"),
     userTextMystery: document.getElementById("mysteryWord"),
     userTextLetters: document.getElementById("guessedLetters"),
     userTextRemain: document.getElementById("remainGuess"),
     userTextAnswer: document.getElementById("answer"),
 
+    //FUNCTION TO GENERATE RANDOM WORD AND STORE IT
     generateWord: function (array) {
 
         var guess = array[Math.floor(Math.random() * array.length)];
@@ -33,13 +38,16 @@ var marioHangman = {
         this.userTextRemain.textContent = this.remainGuess;
     },
 
+    //FUNCTION TO UPDATE GUESS WORD
     updateWord: function (array) {
 
         marioHangman.userTextMystery.innerHTML = marioHangman.userguess.join('');
 
     },
 
+    //FUNCTION TO UPDATE INCORRECT LETTERS
     updateGuessedLetters: function (guess) {
+
         var node = document.createTextNode(guess + ' ');
 
         this.incorrect.push(guess);
@@ -47,10 +55,13 @@ var marioHangman = {
         
     },
 
+    //FUNCTION TO UPDATE REMAINING GUESSES
     updateRemainGuess: function () {
+
         this.remainGuess--;
         this.userTextRemain.textContent = this.remainGuess;
         console.log(this.remainGuess);
+
     }
 }
 
@@ -69,6 +80,7 @@ function playgame () {
 
     marioHangman.generateWord(marioHangman.mysteryArray);
     
+    //LOGIC BEHING MUSIC CONTROL
     //audioElement.play(); //Does not work with Chrome
     var playMusic = document.getElementById("buttonPlay")
     
@@ -82,23 +94,22 @@ function playgame () {
         audioElementTheme.pause();
         audioElementPause.play();
     }
-  
+
+    //EVENT CATCHER
     document.onkeyup = function (event) {
         var guess = event.key;
         var match = false;
         var finish = false;
 
-
+        //UPDATES ARRAY HOLDING GUESS WORD
         for (i = 0; i < marioHangman.correct.length; i++) {
-
             if (guess === marioHangman.correct[i]) {
                 match = true;
                 marioHangman.userguess[i] = guess;
-            }
-            
+            }  
         }
+        //CONSOLE UPDATED GUESS WORD FOR TRACKING PURPOSES
         console.log(marioHangman.userguess);
-        console.log(match);
         
         if (match === true) {
             marioHangman.updateWord(marioHangman.userguess);
@@ -106,10 +117,8 @@ function playgame () {
             marioHangman.updateGuessedLetters(guess);
             marioHangman.updateRemainGuess();
         }
-        
-        //console.log(marioHangman.correct);
 
-
+        //CHECK IF THERE'S STILL LETTERS TO BE GUESSED, IF NOT +1 POINT, PLAYS WINNING TONE AND REVEALS SECRET WORD IMAGE
         if (!marioHangman.userguess.includes('_')) {
             finish = true;
             marioHangman.numberOfWins++;
@@ -119,6 +128,7 @@ function playgame () {
             console.log(finish);
         }
 
+        //IF THERE'S NO MORE BLANK GUESS LETTERS RESETS OBJECT VARIABLES AND PLAYS ONE MORE TIME
         if (finish === true) {
             //Some clean up and make the play function recursive
             marioHangman.userTextMystery.innerHTML = '';
@@ -128,8 +138,9 @@ function playgame () {
             console.log(marioHangman.userguess);
             marioHangman.remainGuess = 12;
             playgame();
-        } 
-        
+        }
+
+        //IF REMAINING GUESSES RUN OUT LOOSE GAME, RESET VARIABLES AND PLAYS LOOSING TONE
         if (marioHangman.remainGuess === 0) {
             marioHangman.userTextMystery.innerHTML = '';
             marioHangman.userTextLetters.innerHTML = '';
@@ -140,10 +151,8 @@ function playgame () {
             marioHangman.userTextAnswer.setAttribute("src", "../Word-Guess-Game/assets/images/dead.gif");
             audioElementLoose.play();
             playgame();
-        }
-        
+        }       
     }
-
 }
 
 playgame();
