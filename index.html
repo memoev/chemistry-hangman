@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Favicon for browser tab (where supported) -->
     <link rel="shortcut icon" type="image/png" href="../Word-Guess-Game/assets/images/mario.ico"/>
+    <!-- Call to css style script -->
     <link rel="stylesheet" href="../Word-Guess-Game/assets/css/style.css">
+    <!-- Special font for page -->
     <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
     <title>Super Mario Hangman!</title>
 </head>
 <body>
 
+    <!-- Container for logo, subtitle and music controls -->
     <div class="container">
         <img id="main-logo" src="../Word-Guess-Game/assets/images/mariologo.png" alt="Logo goes here..">
         <h2 id="subtitle">
@@ -22,6 +26,7 @@
         </div>
     </div>
 
+    <!-- Container for game dynamic elements -->
     <div class="container">
         <div id="main-content">
             <div id="answer-container">
@@ -31,7 +36,7 @@
                 Press any letter to get started!
             </p>
             <p>
-                Wins: (# of times player guessed the word correctly).
+                Wins: (# of times word has been guessed correctly).
             </p>
             <p id="numberOfWins">
 
@@ -57,8 +62,7 @@
         </div>
     </div>
 
-
-
+    <!-- Call to javascript script -->
     <script src="../Word-Guess-Game/assets/javascript/game.js"></script>
 
 </body>
