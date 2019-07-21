@@ -2,6 +2,7 @@ html body {
     background-image: url(../images/background.png);
 }
 
+/* Container for logo, subtitle and music controls */
 .container {
     text-align: center;
     margin: 50px;
@@ -20,6 +21,7 @@ html body {
     font-size: 40px;
 }
 
+/* Music controls buttons */
 .musicControl {
     font-size: 12px;
     background-color: #FFD700;
@@ -28,6 +30,7 @@ html body {
     font-family: 'VT323', monospace;
 }
 
+/* Container for dynamic elements */
 #main-content {
     display: inline-block;
     background: #ffffff;
@@ -43,6 +46,7 @@ html body {
     margin-right: 90px;
 }
 
+/* Dynamic image container */
 #answer {
     width: 100px;
     height: 100px;
