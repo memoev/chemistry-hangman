@@ -18,8 +18,6 @@ var marioHangman = {
         this.userguess.length = 0;
 
         console.log(guess);
-        console.log(this.userguess);
-
 
         for(i = 0; i < guess.length; i++) {
             this.correct.push(guess[i])
@@ -31,7 +29,6 @@ var marioHangman = {
         }
         
         console.log(this.userguess); 
-        console.log(this.correct);
         this.userTextMystery.appendChild(magicLetter);
         this.userTextRemain.textContent = this.remainGuess;
     },
@@ -57,7 +54,7 @@ var marioHangman = {
     }
 }
 
-//GAME STARTS HERE
+//AUDIO ELEMENTS
 var audioElementTheme = document.createElement("audio");
 audioElementTheme.setAttribute("src", "../word-guess-game/assets/tunes/maintheme.mp3");
 var audioElementPause = document.createElement("audio");
@@ -67,11 +64,12 @@ audioElementWin.setAttribute("src", "../word-guess-game/assets/tunes/powerup.mp3
 var audioElementLoose = document.createElement("audio");
 audioElementLoose.setAttribute("src", "../word-guess-game/assets/tunes/dead.mp3");
 
+//GAME STARTS HERE
 function playgame () {
 
-    //audioElement.play(); //Does not work with Chrome
     marioHangman.generateWord(marioHangman.mysteryArray);
-
+    
+    //audioElement.play(); //Does not work with Chrome
     var playMusic = document.getElementById("buttonPlay")
     
     playMusic.onclick = function () {
