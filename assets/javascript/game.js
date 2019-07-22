@@ -67,13 +67,13 @@ var marioHangman = {
 
 //AUDIO ELEMENTS
 var audioElementTheme = document.createElement("audio");
-audioElementTheme.setAttribute("src", "../word-guess-game/assets/tunes/maintheme.mp3");
+audioElementTheme.setAttribute("src", "https://raw.githubusercontent.com/mexcelus/Word-Guess-Game/master/assets/tunes/maintheme.mp3");
 var audioElementPause = document.createElement("audio");
-audioElementPause.setAttribute("src", "../word-guess-game/assets/tunes/pause.mp3");
+audioElementPause.setAttribute("src", "https://raw.githubusercontent.com/mexcelus/Word-Guess-Game/master/assets/tunes/pause.mp3");
 var audioElementWin = document.createElement("audio");
-audioElementWin.setAttribute("src", "../word-guess-game/assets/tunes/powerup.mp3");
+audioElementWin.setAttribute("src", "https://raw.githubusercontent.com/mexcelus/Word-Guess-Game/master/assets/tunes/powerup.mp3");
 var audioElementLoose = document.createElement("audio");
-audioElementLoose.setAttribute("src", "../word-guess-game/assets/tunes/dead.mp3");
+audioElementLoose.setAttribute("src", "https://raw.githubusercontent.com/mexcelus/Word-Guess-Game/master/assets/tunes/dead.mp3");
 
 //GAME STARTS HERE
 function playgame () {
