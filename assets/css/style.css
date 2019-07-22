@@ -34,7 +34,7 @@ html body {
 #main-content {
     display: inline-block;
     background: #ffffff;
-    width: 700px;
+    width: 100%;
     border: 3px solid #000000;
 }
 
