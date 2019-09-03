@@ -1,7 +1,7 @@
 //MAIN OBJECT
 var marioHangman = {
     //ARRAY TO HOLD GUESS WORDS
-    mysteryArray: ['babymario', 'birdo', 'boo', 'bowser', 'goomba'],
+    mysteryArray: ['hydrogen', 'barium', 'gold', 'arsenic', 'neon'],
     //OBJECT VARIABLES USED DURING GAME
     correct: [],
     incorrect: [],
