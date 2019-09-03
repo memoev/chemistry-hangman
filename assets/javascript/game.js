@@ -123,7 +123,7 @@ function playgame () {
             finish = true;
             marioHangman.numberOfWins++;
             marioHangman.userTextWins.textContent = marioHangman.numberOfWins;
-            marioHangman.userTextAnswer.setAttribute("src", "../Word-Guess-Game/assets/images/" + marioHangman.userguess.join('') + ".png");
+            marioHangman.userTextAnswer.setAttribute("src", "../chemistry-hangman/assets/images/" + marioHangman.userguess.join('') + ".png");
             // audioElementWin.play();
             console.log(finish);
         }
