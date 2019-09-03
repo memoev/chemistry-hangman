@@ -66,14 +66,14 @@ var marioHangman = {
 }
 
 //AUDIO ELEMENTS
-var audioElementTheme = document.createElement("audio");
-audioElementTheme.setAttribute("src", "https://raw.githubusercontent.com/mexcelus/Word-Guess-Game/master/assets/tunes/maintheme.mp3");
-var audioElementPause = document.createElement("audio");
-audioElementPause.setAttribute("src", "https://raw.githubusercontent.com/mexcelus/Word-Guess-Game/master/assets/tunes/pause.mp3");
-var audioElementWin = document.createElement("audio");
-audioElementWin.setAttribute("src", "https://raw.githubusercontent.com/mexcelus/Word-Guess-Game/master/assets/tunes/powerup.mp3");
-var audioElementLoose = document.createElement("audio");
-audioElementLoose.setAttribute("src", "https://raw.githubusercontent.com/mexcelus/Word-Guess-Game/master/assets/tunes/dead.mp3");
+// var audioElementTheme = document.createElement("audio");
+// audioElementTheme.setAttribute("src", "https://raw.githubusercontent.com/mexcelus/Word-Guess-Game/master/assets/tunes/maintheme.mp3");
+// var audioElementPause = document.createElement("audio");
+// audioElementPause.setAttribute("src", "https://raw.githubusercontent.com/mexcelus/Word-Guess-Game/master/assets/tunes/pause.mp3");
+// var audioElementWin = document.createElement("audio");
+// audioElementWin.setAttribute("src", "https://raw.githubusercontent.com/mexcelus/Word-Guess-Game/master/assets/tunes/powerup.mp3");
+// var audioElementLoose = document.createElement("audio");
+// audioElementLoose.setAttribute("src", "https://raw.githubusercontent.com/mexcelus/Word-Guess-Game/master/assets/tunes/dead.mp3");
 
 //GAME STARTS HERE
 function playgame () {
@@ -82,18 +82,18 @@ function playgame () {
     
     //LOGIC BEHING MUSIC CONTROL
     //audioElement.play(); //Does not work with Chrome
-    var playMusic = document.getElementById("buttonPlay")
+    // var playMusic = document.getElementById("buttonPlay")
     
-    playMusic.onclick = function () {
-        audioElementTheme.play();
-    }
+    // playMusic.onclick = function () {
+    //     audioElementTheme.play();
+    // }
 
-    var pauseMusic = document.getElementById("buttonPause")
+    // var pauseMusic = document.getElementById("buttonPause")
     
-    pauseMusic.onclick = function () {
-        audioElementTheme.pause();
-        audioElementPause.play();
-    }
+    // pauseMusic.onclick = function () {
+    //     audioElementTheme.pause();
+    //     audioElementPause.play();
+    // }
 
     //EVENT CATCHER
     document.onkeyup = function (event) {
