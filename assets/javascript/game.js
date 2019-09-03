@@ -123,8 +123,8 @@ function playgame () {
             finish = true;
             marioHangman.numberOfWins++;
             marioHangman.userTextWins.textContent = marioHangman.numberOfWins;
-            marioHangman.userTextAnswer.setAttribute("src", "../Word-Guess-Game/assets/images/" + marioHangman.userguess.join('') + ".gif");
-            audioElementWin.play();
+            marioHangman.userTextAnswer.setAttribute("src", "../Word-Guess-Game/assets/images/" + marioHangman.userguess.join('') + ".png");
+            // audioElementWin.play();
             console.log(finish);
         }
 
@@ -149,7 +149,7 @@ function playgame () {
             console.log(marioHangman.userguess);
             marioHangman.remainGuess = 12;
             marioHangman.userTextAnswer.setAttribute("src", "../Word-Guess-Game/assets/images/dead.gif");
-            audioElementLoose.play();
+            // audioElementLoose.play();
             playgame();
         }       
     }
